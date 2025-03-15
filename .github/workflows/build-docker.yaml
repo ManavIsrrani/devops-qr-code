@@ -13,9 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout the code
+      uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker build ./api/ -t manavisrrani/devops:latest
     - name: Push image
-    run: |
-      docker push manavisrrani/devops:latest
+      run: |
+        docker push manavisrrani/devops:latest
