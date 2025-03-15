@@ -16,9 +16,12 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build ./api/ -t manavisrrani/devops:latest
+      run: |
+        docker build ./api/ -t manavisrrani/devops:latest
+        docker build ./front-end-nextjs/ -t manavisrrani/devops:latest
 
     - name: Push image
       run: |
         docker login -u manavisrrani -p ${{ secrets.DOCKER_HUB_TOKEN }}
         docker push manavisrrani/devops:latest
+        docker push manavisrrani/devops-frontend:latest
