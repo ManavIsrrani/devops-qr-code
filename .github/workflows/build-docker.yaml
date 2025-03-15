@@ -20,5 +20,5 @@ jobs:
 
     - name: Push image
       run: |
-        docker login -p ${{ secrets.DOCKER_HUB_TOKEN }}
+        docker login -u manavisrrani -p ${{ secrets.DOCKER_HUB_TOKEN }}
         docker push manavisrrani/devops:latest
