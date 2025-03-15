@@ -18,7 +18,7 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build ./api/ -t manavisrrani/devops:latest
-        docker build ./front-end-nextjs/ -t manavisrrani/devops:latest
+        docker build ./front-end-nextjs/ -t manavisrrani/devops-frontend:latest
 
     - name: Push image
       run: |
